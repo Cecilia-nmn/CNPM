@@ -35,9 +35,15 @@ public class MainActivity extends AppCompatActivity {
             Intent contactLayout = new Intent(MainActivity.this, LienHe.class);
             startActivity(contactLayout);
         }
+        if (R.id.search == item.getItemId()) {
+            Intent searchLayout = new Intent(MainActivity.this, YeuCauLienHe.class);
+            searchLayout.putExtra("user", user);
+            searchLayout.putExtra("receiver", "user1");
+            startActivity(searchLayout);
+        }
         return super.onOptionsItemSelected(item);
     }
-    private void userLogin() {
+    public void userLogin() {
         if (user == null) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivityForResult(intent, LOGIN_REQUEST_CODE);

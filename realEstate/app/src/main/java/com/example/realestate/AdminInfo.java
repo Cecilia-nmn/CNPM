@@ -37,8 +37,8 @@ public class AdminInfo extends AppCompatActivity {
         tvUsername.setText(user.getUsername());
 
         btnChange.setOnClickListener(view -> {
-            Intent selfInfo = new Intent(AdminInfo.this, SellerInfo.class);
-            intent.putExtra("user", user);
+            Intent selfInfo = new Intent(AdminInfo.this, SelfInfo.class);
+            selfInfo.putExtra("user", user);
             startActivity(selfInfo);
         });
 
@@ -50,6 +50,7 @@ public class AdminInfo extends AppCompatActivity {
             Intent manageUser = new Intent(AdminInfo.this, ManageUser.class);
             startActivity(manageUser);
         });
+
 
         btnNotify.setOnClickListener(view -> {
             Intent notifyPage = new Intent(AdminInfo.this, Notify.class);

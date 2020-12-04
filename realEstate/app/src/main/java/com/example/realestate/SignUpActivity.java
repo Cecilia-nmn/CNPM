@@ -86,6 +86,9 @@ public class SignUpActivity extends AppCompatActivity {
                         if (data.message.equals("Email tồn tại!")) {
                             Toast.makeText(SignUpActivity.this, "Email tồn tại! Vui lòng nhập Email khác", Toast.LENGTH_SHORT).show();
                         }
+                        if (data.message.equals("Tên người dùng tồn tại!")) {
+                            Toast.makeText(SignUpActivity.this, "Người dùng tồn tại! Vui lòng nhập tên khác", Toast.LENGTH_SHORT).show();
+                        }
                         else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                             builder.setCancelable(false);

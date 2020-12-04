@@ -21,11 +21,16 @@ public class User implements Parcelable {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.phone = "";
+        this.role = 1;
     }
 
     public User(String email, String password) {
         this.email = email;
+        this.username = username;
         this.password = password;
+        this.phone = "";
+        this.role = 1;
     }
 
     public User(String username, String password, String email, String phone, int role) {
@@ -40,6 +45,7 @@ public class User implements Parcelable {
         this.email = email;
         this.password = password;
         this.username = username;
+        this.phone = "";
         this.role = role;
     }
 

@@ -37,14 +37,15 @@ public class SelfInfo extends AppCompatActivity {
 
         Intent intent = getIntent();
         User user = intent.getParcelableExtra("user");
+
         edtPhone.setText(user.getPhone());
         txtEmail.setText(user.getEmail());
 
         btnSaveInf.setOnClickListener(view -> {
-            if (!edtPhone.getText().equals(user.getPhone())) {
+            if (!edtPhone.getText().toString().equals(user.getPhone())) {
                 user.setPhone(edtPhone.getText().toString());
                 MovieService service = MovieApi.getClient().create(MovieService.class);
-                service.update_info(user).enqueue(new Callback<Response<String>>() {
+                service.updateInfo(user).enqueue(new Callback<Response<String>>() {
                     @Override
                     public void onResponse(Call<Response<String>> call, retrofit2.Response<Response<String>> response) {
                         Response<String> data = response.body();
@@ -73,6 +74,44 @@ public class SelfInfo extends AppCompatActivity {
             }
             else {
                 Toast.makeText(SelfInfo.this, "Không có sự thay đổi", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnSavePass.setOnClickListener(view -> {
+            if (edtPass.getText().toString().equals("") || edtConf.getText().toString().equals("")) {
+                Toast.makeText(SelfInfo.this, "Hãy nhập đủ thông tin!", Toast.LENGTH_LONG).show();
+            }
+            else  if (!edtPass.getText().toString().equals(edtConf.getText().toString())) {
+                Toast.makeText(SelfInfo.this, "Mật khẩu xác nhận không đúng!", Toast.LENGTH_LONG).show();
+            }
+            else {
+                user.setPassword(edtPass.getText().toString());
+                MovieService service = MovieApi.getClient().create(MovieService.class);
+                service.updatePass(user).enqueue(new Callback<Response<String>>() {
+                    @Override
+                    public void onResponse(Call<Response<String>> call, retrofit2.Response<Response<String>> response) {
+                        Response<String> data = response.body();
+                        if (data == null) {
+                            Toast.makeText(SelfInfo.this, "Không kết nối được đến server", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SelfInfo.this);
+                            builder.setCancelable(false);
+                            builder.setTitle("Đã lưu");
+                            builder.setPositiveButton("OK", (dialogInterface, i) -> {
+                                finish();
+                            });
+
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response<String>> call, Throwable t) {
+                        Toast.makeText(SelfInfo.this, "Không có sự thay đổi", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }

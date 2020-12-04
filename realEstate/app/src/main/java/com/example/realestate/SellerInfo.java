@@ -33,7 +33,13 @@ public class SellerInfo extends AppCompatActivity {
         Intent intent = getIntent();
         User user = intent.getParcelableExtra("user");
         tvUsername.setText(user.getUsername());
-        
+
+        btnChange.setOnClickListener(view -> {
+            Intent selfInfo = new Intent(SellerInfo.this, SelfInfo.class);
+            selfInfo.putExtra("user", user);
+            startActivity(selfInfo);
+        });
+
         btnLogout.setOnClickListener(view -> {
             Intent intent1 = new Intent();
             intent1.putExtra("user", (Bundle) null);

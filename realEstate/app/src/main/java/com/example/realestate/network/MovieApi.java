@@ -14,7 +14,7 @@ public class MovieApi {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8888/app_api/")
+                .baseUrl("http://10.0.2.2:8888/movie_api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

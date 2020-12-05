@@ -34,6 +34,12 @@ public class SellerInfo extends AppCompatActivity {
         User user = intent.getParcelableExtra("user");
         tvUsername.setText(user.getUsername());
 
+        btnHistory.setOnClickListener(view -> {
+            Intent postManage = new Intent(SellerInfo.this, PostManage.class);
+            postManage.putExtra("user", user);
+            startActivity(postManage);
+        });
+
         btnChange.setOnClickListener(view -> {
             Intent selfInfo = new Intent(SellerInfo.this, SelfInfo.class);
             selfInfo.putExtra("user", user);
@@ -65,9 +71,9 @@ public class SellerInfo extends AppCompatActivity {
         });
 
         btnNotify.setOnClickListener(view -> {
-            /*Intent notifyPage = new Intent(SellerInfo.this, Contact.class);
-            intent.putExtra("user", user);
-            startActivity(notifyPage);*/
+            Intent notifyPage = new Intent(SellerInfo.this, Contact.class);
+            notifyPage.putExtra("user", user);
+            startActivity(notifyPage);
         });
     }
 }

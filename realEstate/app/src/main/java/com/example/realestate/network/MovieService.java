@@ -1,6 +1,7 @@
 package com.example.realestate.network;
 
 import com.example.realestate.ContactRequest;
+import com.example.realestate.Post;
 import com.example.realestate.Report;
 import com.example.realestate.User;
 
@@ -41,4 +42,25 @@ public interface MovieService {
 
     @POST("send_request.php")
     Call<Response<String>> sendRequest(@Body ContactRequest request);
+
+    @POST("send_post.php")
+    Call<Response<String>> sendPost(@Body Post post);
+
+    @POST("get_all_post.php")
+    Call<Response<List<Post>>> getAllPost();
+
+    @POST("delete_post.php")
+    Call<Response<String>> deletePost(@Body Post post);
+
+    @POST("update_post.php")
+    Call<Response<String>> updatePost(@Body Post post);
+
+    @POST("get_post.php")
+    Call<Response<List<Post>>> getPost(@Body User user);
+
+    @POST("get_request.php")
+    Call<Response<List<ContactRequest>>> getContact(@Body User user);
+
+    @POST("delete_request.php")
+    Call<Response<String>> deleteRequest(@Body ContactRequest request);
 }

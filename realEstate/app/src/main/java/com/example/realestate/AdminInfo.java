@@ -44,8 +44,10 @@ public class AdminInfo extends AppCompatActivity {
 
         btnHistory.setOnClickListener(view -> {
             Intent postManage = new Intent(AdminInfo.this, PostManage.class);
+            postManage.putExtra("user", user);
             startActivity(postManage);
         });
+
         btnUsers.setOnClickListener(view -> {
             Intent manageUser = new Intent(AdminInfo.this, ManageUser.class);
             startActivity(manageUser);

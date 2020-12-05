@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealEstate"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Contact"></activity>
+        <activity android:name=".ChangePost"></activity>
+        <activity android:name=".Contact" />
         <activity android:name=".SelfInfo" />
         <activity android:name=".PostManage" />
-        <activity android:name=".MUAdapter" />
         <activity android:name=".ManageUser" />
-        <activity android:name=".NotifyAdapter" />
         <activity android:name=".Notify" />
+        <activity android:name=".AddPost" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
+        <activity android:name=".TimKiem" />
+        <activity android:name=".XemBaiViet" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".UserInfo" />
         <activity android:name=".SellerInfo" />

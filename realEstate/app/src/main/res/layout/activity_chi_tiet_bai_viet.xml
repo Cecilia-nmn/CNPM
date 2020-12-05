@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPost"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtTieuDe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiêu đề"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtTieuDe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tiêu đề"
+            android:layout_marginLeft="25dp">
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hình"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtHinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chọn hình"
+            android:layout_marginLeft="25dp">
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập địa chỉ"
+            android:layout_marginLeft="25dp">
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtNoiDung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nội Dung"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtNoiDung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập nội dung"
+            android:layout_marginLeft="10dp">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtSoPhong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số phòng"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtSoPhong"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:inputType="number"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/txtKichThuoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kích thước"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp">
+        </TextView>
+        <EditText
+            android:id="@+id/edtCD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="cm3"
+            android:layout_marginLeft="10dp">
+        </EditText>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtKhuVuc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khu vực"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        >
+    </TextView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RadioGroup
+            android:id="@+id/rdg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp">
+                <RadioButton
+                    android:id="@+id/radioQ1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="Quận 1" />
+
+                <RadioButton
+                    android:id="@+id/radioQ2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quận 2" />
+
+                <RadioButton
+                    android:id="@+id/radioQ3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quận 3" />
+
+                <RadioButton
+                    android:id="@+id/radioQ4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quận 4" />
+
+                <RadioButton
+                    android:id="@+id/radioQ5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Quận 5" />
+
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/buttonDB"
+            android:background="#A4F87DA6"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Đăng bài" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
